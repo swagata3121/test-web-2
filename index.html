@@ -1,9 +1,235 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>First Web Page</title>
-  </head>
-  <body>
-    Hello World!...
-  </body>
-</html>   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital@0;1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fff9f9;
+            --accent-color: #d18d8d;
+            --text-color: #5a5a5a;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        header {
+    min-height: 40vh; /* Changed to 40% of screen height instead of 100% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px; /* Added more padding to the top and bottom */
+}
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Content Sections */
+        .section {
+            max-width: 800px;
+            margin: 0 auto 100px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(209, 141, 141, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            border-bottom: 1px solid #f2d7d7;
+            padding-bottom: 10px;
+        }
+
+        /* Music Placeholder */
+        .music-player {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px dashed var(--accent-color);
+            border-radius: 10px;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-slot {
+            aspect-ratio: 1;
+            background: #eee;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #aaa;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .heart {
+            color: #e74c3c;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Little Home</h1>
+        <p class="subtitle">A private space for us.</p>
+        <div style="margin-top: 20px;">↓</div>
+    </header>
+    <div class="section" id="counter-section">
+    <h2>Days of Us</h2>
+    <div id="timer" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #d18d8d; font-weight: bold;">
+        Connecting to our memories...
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">Since December 31, 2024</p>
+</div>
+
+    <div class="section">
+        <h2>A Letter to You</h2>
+        <p>
+            I wanted to create something more permanent than a text message. 
+            I want you to know how much you mean to me.
+            This is our digital sanctuary, for my favourite person
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Our Soundtrack</h2>
+        <div class="music-player">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0RsH8g8DxdYZgdGcod5I36?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Captured Moments</h2>
+        <div class="gallery">
+    <img src="images/1.jpg.jpg" alt="Our Moment" style="width:100%; border-radius: 10px;">   
+    <img src="images/2.jpg.jpeg" alt="Special Day" style="width:100%; border-radius: 10px;">
+   <img src="images/3.jpg.jpeg" alt="Sunset" style="width:100%; border-radius: 10px;">
+   <img src="images/4.jpg.jpeg"style="width:100%; border-radius: 10px;"> 
+   <img src="images/5.jpg.jpeg"style="width:100%; border-radius: 10px;"> 
+   <img src="images/6.jpg.jpeg"style="width:100%; border-radius: 10px;"> 
+</div>
+</div>
+    
+
+    <footer>
+        Made with <span class="heart">❤</span>  by your favorite person
+    </footer>
+   <script>
+    document.addEventListener('mousemove', function(e) {
+        let body = document.querySelector('body');
+        let text = document.createElement('span');
+        
+        // Positioning
+        let x = e.pageX;
+        let y = e.pageY;
+        text.style.left = x + 'px';
+        text.style.top = y + 'px';
+
+        // The Message
+        text.innerHTML = "I love you";
+
+        // Pure Text Styling (No shapes)
+        text.style.position = 'absolute';
+        text.style.pointerEvents = 'none';
+        text.style.color = '#d18d8d'; 
+        text.style.fontFamily = "'Dancing Script', cursive";
+        text.style.fontSize = (Math.random() * 5 + 18) + 'px';
+        text.style.zIndex = '9999';
+        text.style.whiteSpace = 'nowrap'; // Keeps the text in one line
+
+        body.appendChild(text);
+
+        // Movement and Fade
+        setTimeout(() => {
+            text.style.transition = 'all 1.5s ease-out';
+            text.style.top = (y - 80) + 'px'; 
+            text.style.opacity = '0';
+        }, 50);
+
+        // Clean up
+        setTimeout(() => {
+            text.remove();
+        }, 1500);
+    });
+</script>
+
+<style>
+    /* Ensure the body can show the absolute positioned hearts */
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+</style>
+<script>
+    function updateTimer() {
+        // Your anniversary date: Dec 31, 2024
+        const startDate = new Date("December 31, 2024 00:00:00").getTime();
+        const now = new Date().getTime();
+        const difference = now - startDate;
+
+        // Math to convert milliseconds into days, hours, etc.
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // This line pushes the numbers into the HTML 'timer' div
+        document.getElementById("timer").innerHTML = 
+            days + " days, " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    // This makes the clock "tick" every 1000 milliseconds (1 second)
+    setInterval(updateTimer, 1000);
+    updateTimer(); 
+</script>
+
+</body>
+</html>
